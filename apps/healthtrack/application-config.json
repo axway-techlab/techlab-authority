@@ -1,0 +1,31 @@
+{
+  "name": "healthtrack",
+  "organization": "API Development",
+  "description": "Keep track of all your treatments, appointments, medications, examns from everywhere.",
+  "state": "approved",
+  "enabled": true,
+  "credentials": [
+    {
+      "credentialType": "apikeys",
+      "secret": "70aacee6-0954-4b1d-bfcc-747d5c092173",
+      "corsOrigins": [
+        "*"
+      ],
+      "apiKey": "1b0de034-c3da-40d2-a37a-d3548ac69edc"
+    }
+  ],
+  "apis": [
+    {
+      "apiName": "Doctolib",
+      "apiVersion": "3.0"
+    },
+    {
+      "apiName": "FHIR Medication",
+      "apiVersion": "4.0.1-3"
+    },
+    {
+      "apiName": "FHIR Medication Statement",
+      "apiVersion": "4.0.1-1"
+    }
+  ]
+}
