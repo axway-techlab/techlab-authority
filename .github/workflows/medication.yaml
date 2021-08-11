@@ -8,6 +8,7 @@ on:
     paths:
       - apis/medication/**
       - apis/defaults.json
+      - .github/workflows/medication.yaml
 jobs:
   ## No docker mock here, we hit FHIR directly
   apim:

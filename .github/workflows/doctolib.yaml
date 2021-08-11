@@ -8,6 +8,7 @@ on:
     paths:
       - apis/doctolib/**
       - apis/defaults.json
+      - .github/workflows/doctolib.yaml
 jobs:
   ## No docker mock here, we hit FHIR directly
   apim:
