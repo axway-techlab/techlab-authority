@@ -7,7 +7,7 @@
       "name": "FHIR Medication",
       "summary": "",
       "path": "/medication",
-      "version": "4.0.1-3"
+      "version": "4.0.1-4"
     }
   }
 }
