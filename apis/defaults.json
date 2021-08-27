@@ -39,6 +39,14 @@
   },
   "clientOrganizations": [
     "API Development"
+  ],
+  "applications": [
+    {
+      "name": "healthtrack",
+      "enabled": true,
+      "state": "approved",
+      "oauthResources": []
+    }
   ]
 }
 
