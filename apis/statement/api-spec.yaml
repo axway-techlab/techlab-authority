@@ -17,6 +17,8 @@ paths:
         - MedicationStatement
       summary: 'read-instance: Read MedicationStatement instance'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -37,6 +39,8 @@ paths:
         - MedicationStatement
       summary: 'update-instance: Update an existing MedicationStatement instance, or create using a client-assigned ID'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -62,6 +66,8 @@ paths:
         - MedicationStatement
       summary: 'instance-delete: Perform a logical delete on a resource instance'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -82,6 +88,8 @@ paths:
         - MedicationStatement
       summary: 'instance-patch: Patch a resource instance of type MedicationStatement by ID'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -108,6 +116,8 @@ paths:
         - MedicationStatement
       summary: 'vread-instance: Read MedicationStatement instance with specific version'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -138,6 +148,8 @@ paths:
       summary: 'search-type: Update an existing MedicationStatement instance, or create using a client-assigned ID'
       description: 'This is a search type'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: _language
           in: query
           description: 'The language of the resource'
@@ -267,6 +279,8 @@ paths:
         - MedicationStatement
       summary: 'instance-history: Fetch the resource change history for all resources of type MedicationStatement'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -304,6 +318,8 @@ paths:
       tags:
         - MedicationStatement
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -331,6 +347,8 @@ paths:
         - MedicationStatement
       description: 'Request a global list of tags, profiles, and security labels'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: return
           in: query
           required: false
@@ -348,6 +366,8 @@ paths:
         - MedicationStatement
       description: 'Request a global list of tags, profiles, and security labels'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -373,6 +393,8 @@ paths:
         - MedicationStatement
       description: 'Add tags, profiles, and/or security labels to a resource'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -400,6 +422,8 @@ paths:
         - MedicationStatement
       description: 'Delete tags, profiles, and/or security labels from a resource'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -426,6 +450,8 @@ paths:
       tags:
         - MedicationStatement
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: resource
           in: query
           required: false
@@ -450,6 +476,8 @@ paths:
       tags:
         - MedicationStatement
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -483,6 +511,8 @@ paths:
         - MedicationStatement
       description: 'This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -505,6 +535,8 @@ paths:
       summary: 'Comparte two resources or two versions of a single resource'
       description: 'This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
           description: 'The resource ID'
@@ -545,3 +577,20 @@ components:
     params:
       title: simple param
       type: string
+  parameters:
+    _pretty:
+      name: _pretty
+      in: query
+      required: false
+      schema:
+        type: boolean
+    _format:
+      name: _format
+      in: query
+      required: true
+      schema:
+        type: string
+        default: json
+        enum:
+          - json
+          - xml

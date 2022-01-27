@@ -1,15 +1,15 @@
 openapi: 3.0.1
 info:
-  title: 'HAPI FHIR Server'
+  title: HAPI FHIR Server
   contact: {}
   version: 5.5.0-PRE1-SNAPSHOT/e359b6d823/2021-05-19
-  description: "Medication endpoints for the FHIR specification"
+  description: Medication endpoints for the FHIR specification
 servers:
   - url: 'http://hapi.fhir.org/baseR4'
-    description: 'HAPI FHIR Server'
+    description: HAPI FHIR Server
 tags:
   - name: Medication
-    description: 'The Medication FHIR resource type'
+    description: The Medication FHIR resource type
 paths:
   '/Medication/{id}':
     get:
@@ -18,9 +18,11 @@ paths:
         - Medication
       summary: 'read-instance: Read Medication instance'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -41,7 +43,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -67,7 +69,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -88,7 +90,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -113,9 +115,11 @@ paths:
         - Medication
       summary: 'vread-instance: Read Medication instance with specific version'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -123,7 +127,7 @@ paths:
             type: string
         - name: version_id
           in: path
-          description: 'The resource version ID'
+          description: The resource version ID
           required: true
           style: simple
           schema:
@@ -142,88 +146,114 @@ paths:
       tags:
         - Medication
       summary: 'search-type: Update an existing Medication instance, or create using a client-assigned ID'
-      description: 'This is a search type'
+      description: This is a search type
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: _language
           in: query
-          description: 'The language of the resource'
-          schema: { $ref: "#/components/schemas/params" }
+          description: The language of the resource
+          schema:
+            $ref: '#/components/schemas/params'
         - name: identifier
           in: query
-          description: 'Returns medications with this external identifier'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications with this external identifier
+          schema:
+            $ref: '#/components/schemas/params'
         - name: code
           in: query
-          description: 'Returns medications for a specific code'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications for a specific code
+          schema:
+            $ref: '#/components/schemas/params'
         - name: ingredient
           in: query
-          description: 'Returns medications for this ingredient reference'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications for this ingredient reference
+          schema:
+            $ref: '#/components/schemas/params'
         - name: lot-number
           in: query
-          description: 'Returns medications in a batch with this lot number'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications in a batch with this lot number
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _lastUpdated
           in: query
-          description: "Only return resources which were last updated as specified by\nthe given range"
-          schema: { $ref: "#/components/schemas/params" }
+          description: |-
+            Only return resources which were last updated as specified by
+            the given range
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _security
           in: query
-          description: 'Search for resources which have the given security labels'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search for resources which have the given security labels
+          schema:
+            $ref: '#/components/schemas/params'
         - name: manufacturer
           in: query
-          description: 'Returns medications made or sold for this manufacturer'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications made or sold for this manufacturer
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _filter
           in: query
-          description: 'Search the contents of the resource''s data using a filter'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search the contents of the resource's data using a filter
+          schema:
+            $ref: '#/components/schemas/params'
         - name: ingredient-code
           in: query
-          description: 'Returns medications for this ingredient code'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications for this ingredient code
+          schema:
+            $ref: '#/components/schemas/params'
         - name: form
           in: query
-          description: 'Returns medications for a specific dose form'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications for a specific dose form
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _profile
           in: query
-          description: 'Search for resources which have the given profile'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search for resources which have the given profile
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _has
           in: query
-          description: 'Return resources linked to by the given target'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Return resources linked to by the given target
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _tag
           in: query
-          description: 'Search for resources which have the given tag'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search for resources which have the given tag
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _source
           in: query
-          description: 'Search for resources which have the given source value (Resource.meta.source)'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search for resources which have the given source value (Resource.meta.source)
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _id
           in: query
-          description: 'The ID of the resource'
-          schema: { $ref: "#/components/schemas/params" }
+          description: The ID of the resource
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _content
           in: query
-          description: 'Search the contents of the resource''s data using a fulltext search'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Search the contents of the resource's data using a fulltext search
+          schema:
+            $ref: '#/components/schemas/params'
         - name: _text
           in: query
-          description: "Search the contents of the resource's narrative using a fulltext\nsearch"
-          schema: { $ref: "#/components/schemas/params" }
+          description: |-
+            Search the contents of the resource's narrative using a fulltext
+            search
+          schema:
+            $ref: '#/components/schemas/params'
         - name: expiration-date
           in: query
-          description: 'Returns medications in a batch with this expiration date'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications in a batch with this expiration date
+          schema:
+            $ref: '#/components/schemas/params'
         - name: status
           in: query
-          description: 'Returns medications for this status'
-          schema: { $ref: "#/components/schemas/params" }
+          description: Returns medications for this status
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -254,6 +284,9 @@ paths:
       tags:
         - Medication
       summary: 'type-history: Fetch the resource change history for all resources of type Medication'
+      parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
       responses:
         '200':
           description: Success
@@ -268,9 +301,11 @@ paths:
         - Medication
       summary: 'instance-history: Fetch the resource change history for all resources of type Medication'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -292,7 +327,7 @@ paths:
         content:
           application/json:
             schema:
-              title: 'FHIR Resource'
+              title: FHIR Resource
               type: object
       responses:
         '200':
@@ -309,7 +344,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -319,7 +354,7 @@ paths:
         content:
           application/json:
             schema:
-              title: 'FHIR Resource'
+              title: FHIR Resource
               type: object
       responses:
         '200':
@@ -335,10 +370,13 @@ paths:
         - Medication
       description: 'Request a global list of tags, profiles, and security labels'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: return
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -352,9 +390,11 @@ paths:
         - Medication
       description: 'Request a global list of tags, profiles, and security labels'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -363,7 +403,8 @@ paths:
         - name: return
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -379,7 +420,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -389,7 +430,7 @@ paths:
         content:
           application/json:
             schema:
-              title: 'FHIR Resource'
+              title: FHIR Resource
               type: object
       responses:
         '200':
@@ -406,7 +447,7 @@ paths:
       parameters:
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -416,7 +457,7 @@ paths:
         content:
           application/json:
             schema:
-              title: 'FHIR Resource'
+              title: FHIR Resource
               type: object
       responses:
         '200':
@@ -430,18 +471,23 @@ paths:
       tags:
         - Medication
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: resource
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: mode
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: profile
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -454,9 +500,11 @@ paths:
       tags:
         - Medication
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -465,15 +513,18 @@ paths:
         - name: resource
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: mode
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: profile
           in: query
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -487,9 +538,11 @@ paths:
         - Medication
       description: 'This operation invokes a GraphQL expression for fetching an joining a graph of resources, returning them in a custom format.'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -506,12 +559,14 @@ paths:
     get:
       tags:
         - Medication
-      summary: 'Comparte two resources or two versions of a single resource'
+      summary: Comparte two resources or two versions of a single resource
       description: 'This operation examines two resource versions (can be two versions of the same resource, or two different resources) and generates a FHIR Patch document showing the differences.'
       parameters:
+        - $ref: '#/components/parameters/_pretty'
+        - $ref: '#/components/parameters/_format'
         - name: id
           in: path
-          description: 'The resource ID'
+          description: The resource ID
           required: true
           style: simple
           schema:
@@ -519,24 +574,30 @@ paths:
             type: string
         - name: from
           in: query
-          description: 'The resource ID and version to diff from'
+          description: The resource ID and version to diff from
           required: true
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: to
           in: query
-          description: 'The resource ID and version to diff to'
+          description: The resource ID and version to diff to
           required: true
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: includeMeta
           in: query
-          description: "Should differences in the Resource.meta element be included in\nthe diff"
+          description: |-
+            Should differences in the Resource.meta element be included in
+            the diff
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
         - name: fromVersion
           in: query
-          description: 'The resource ID and version to diff from'
+          description: The resource ID and version to diff from
           required: false
-          schema: { $ref: "#/components/schemas/params" }
+          schema:
+            $ref: '#/components/schemas/params'
       responses:
         '200':
           description: Success
@@ -549,3 +610,20 @@ components:
     params:
       title: simple param
       type: string
+  parameters:
+    _pretty:
+      name: _pretty
+      in: query
+      required: false
+      schema:
+        type: boolean
+    _format:
+      name: _format
+      in: query
+      required: true
+      schema:
+        type: string
+        default: json
+        enum:
+          - json
+          - xml

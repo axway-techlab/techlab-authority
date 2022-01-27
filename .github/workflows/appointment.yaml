@@ -1,14 +1,14 @@
-name: Publish doctolib
+name: Publish appointment
 env:
-  api: doctolib
+  api: appointment
 on:
   push:
     branches:
       - main
     paths:
-      - apis/doctolib/**
+      - apis/appointment/**
       - apis/defaults.json
-      - .github/workflows/doctolib.yaml
+      - .github/workflows/appointment.yaml
 jobs:
   ## No docker mock here, we hit FHIR directly
   apim:
