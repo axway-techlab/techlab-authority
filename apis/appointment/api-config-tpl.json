@@ -7,7 +7,7 @@
       "name": "FHIR Appointment",
       "summary": "Easy Medical Appointments",
       "path": "/appointment",
-      "version": "3.0-1"
+      "version": "3.0-2"
     }
   }
 }
