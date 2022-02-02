@@ -34,9 +34,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
     put:
       tags:
       - Appointment
@@ -63,10 +60,6 @@ paths:
               {
                 "resourceType": "Appointment"
               }
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <Appointment xmlns="http://hl7.org/fhir"/>
       responses:
         "200":
           description: Success
@@ -74,9 +67,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
     delete:
       tags:
       - Appointment
@@ -100,9 +90,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
     patch:
       tags:
       - Appointment
@@ -144,31 +131,6 @@ paths:
                   } ]
                 } ]
               }
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: |-
-              <Parameters xmlns="http://hl7.org/fhir">
-                 <parameter>
-                    <name value="operation"/>
-                    <part>
-                       <name value="type"/>
-                       <valueString value="add"/>
-                    </part>
-                    <part>
-                       <name value="path"/>
-                       <valueString value="Patient"/>
-                    </part>
-                    <part>
-                       <name value="name"/>
-                       <valueString value="birthDate"/>
-                    </part>
-                    <part>
-                       <name value="value"/>
-                       <valueDate value="1930-01-01"/>
-                    </part>
-                 </parameter>
-              </Parameters>
       responses:
         "200":
           description: Success
@@ -176,9 +138,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/_history/{version_id}:
     get:
       tags:
@@ -212,9 +171,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment:
     get:
       tags:
@@ -344,9 +300,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
     post:
       tags:
       - Appointment
@@ -360,10 +313,6 @@ paths:
               {
                 "resourceType": "Appointment"
               }
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/FHIR-XML-RESOURCE'
-            example: <Appointment xmlns="http://hl7.org/fhir"/>
       responses:
         "200":
           description: Success
@@ -371,9 +320,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/_history:
     get:
       tags:
@@ -387,9 +333,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/_history:
     get:
       tags:
@@ -415,9 +358,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/$expunge:
     post:
       tags:
@@ -454,9 +394,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$expunge:
     post:
       tags:
@@ -505,9 +442,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/$meta:
     get:
       tags:
@@ -527,9 +461,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$meta:
     get:
       tags:
@@ -558,9 +489,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$meta-add:
     post:
       tags:
@@ -600,9 +528,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$meta-delete:
     post:
       tags:
@@ -642,9 +567,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/$validate:
     get:
       tags:
@@ -671,9 +593,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$validate:
     get:
       tags:
@@ -709,9 +628,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$graphql:
     get:
       tags:
@@ -737,9 +653,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
   /Appointment/{id}/$diff:
     get:
       tags:
@@ -792,15 +705,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FHIR-JSON-RESOURCE'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/FHIR-XML-RESOURCE'
 components:
   schemas:
     FHIR-JSON-RESOURCE:
-      type: object
-      description: A FHIR resource
-    FHIR-XML-RESOURCE:
       type: object
       description: A FHIR resource
   parameters:
